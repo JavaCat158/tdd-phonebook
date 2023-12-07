@@ -32,4 +32,19 @@ public class PhoneBookTest {
         String result3 = phoneBook.findByNumber("4564564564");
         assertNull(result3);
     }
+    @Test
+    public void testFindByName() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("John", "1234567890");
+        phoneBook.add("Jane", "9876543210");
+
+        String result1 = phoneBook.findByName("John");
+        assertEquals("1234567890", result1);
+
+        String result2 = phoneBook.findByName("Jane");
+        assertEquals("9876543210", result2);
+
+        String result3 = phoneBook.findByName("Alexandr");
+        assertNull(result3);
+    }
 }
