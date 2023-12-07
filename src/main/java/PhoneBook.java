@@ -33,6 +33,9 @@ public class PhoneBook {
         return null;
     }
     public List<String> getAllNames() {
-        return new ArrayList<>();
+        return contacts.stream()
+                .map(Contact::getName)
+                .sorted()
+                .toList();
     }
 }
