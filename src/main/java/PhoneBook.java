@@ -25,6 +25,11 @@ public class PhoneBook {
         return null;
     }
     public String findByName(String name) {
+        for(Contact contact : contacts) {
+            if (contact.getName().equals(name)) {
+                return contact.getPhoneNumber();
+            }
+        }
         return null;
     }
 }
